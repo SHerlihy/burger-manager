@@ -10,8 +10,8 @@ export default class Navbar extends Component {
           <p>BurgerTime</p>
         </div>
         <div className="nav-btns">
-          <button>Options</button>
-          <button>BUY</button>
+          <button>New Ingredient</button>
+          <button>Manage Stock</button>
         </div>
       </div>
     );

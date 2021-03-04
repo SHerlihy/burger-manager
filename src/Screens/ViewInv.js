@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ViewItem from "../Components/ViewItem";
 import axios from "axios";
+import ManageStock from "../Components/ManageStock";
+import NewIngredient from "../Components/NewIngredient";
 
 export default class ViewInv extends Component {
   constructor(props) {
@@ -20,12 +22,15 @@ export default class ViewInv extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="view-inv">
         {Object.keys(this.state).map((key, idx) => (
-          <ViewItem name={this.state[key].name} stock={this.state[key].stock} />
+          <ManageStock
+            name={this.state[key].name}
+            stock={this.state[key].stock}
+          />
         ))}
+        <NewIngredient />
       </div>
     );
   }
