@@ -3,6 +3,13 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.view-item {
+  width: 100%;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 30vw 10vw;
+}
+
 .view-inv {
   margin-top: 10vh;
 }

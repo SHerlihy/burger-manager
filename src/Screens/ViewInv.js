@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ViewItem from "../Components/ViewItem";
 import axios from "axios";
 
 export default class ViewInv extends Component {
@@ -22,7 +23,9 @@ export default class ViewInv extends Component {
     console.log(this.state);
     return (
       <div className="view-inv">
-        <h1>hello</h1>
+        {Object.keys(this.state).map((key, idx) => (
+          <ViewItem name={this.state[key].name} stock={this.state[key].stock} />
+        ))}
       </div>
     );
   }
