@@ -12,17 +12,18 @@ export default class ManageStock extends Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+    if (this.state.updated === true) {
+      this.setState({ updated: false });
+    }
   }
 
   //has to be called handleSubmit otherwise doesn't recognise state
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.value);
     const updateObj = {
       name: event.target.name,
       used: Number(this.state.value),
     };
-    console.log(updateObj);
     const dbURL = "http://localhost:4500";
     try {
       axios
@@ -33,6 +34,7 @@ export default class ManageStock extends Component {
     } catch (error) {
       console.log(error);
     }
+    this.setState({ updated: true });
   }
 
   render() {
